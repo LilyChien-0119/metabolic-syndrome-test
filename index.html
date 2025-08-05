@@ -411,9 +411,9 @@
                 // 檢查血壓
                 if (systolic >= 130 || diastolic >= 90) {
                     riskFactors++;
-                    results.push('❌ 血壓偏高 (收縮壓正常值≦130 或 舒張壓正常值≦90)');
+                    results.push('❌ 血壓偏高 (收縮壓正常值≦140 或 舒張壓正常值≦90)');
                 } else if (systolic > 0 || diastolic > 0) {
-                    results.push('✅ 血壓正常');
+                    results.push('✅ 血壓正常(收縮壓正常值≦140 或 舒張壓正常值≦90)');
                 }
                 
                 // 檢查腰圍
@@ -424,7 +424,7 @@
                     riskFactors++;
                     results.push('❌ 腰圍超標 (女性正常腰圍<80cm)');
                 } else if (waistGender && waistMeasurement > 0) {
-                    results.push('✅ 腰圍正常');
+                    results.push('✅ 腰圍正常(男性正常腰圍<90cm、女性正常腰圍<80cm)');
                 }
                 
                 // 檢查空腹血糖
@@ -432,7 +432,7 @@
                     riskFactors++;
                     results.push('❌ 空腹血糖偏高 (血糖正常值70mg/dL~99mg/dL)');
                 } else if (glucose > 0) {
-                    results.push('✅ 空腹血糖正常');
+                    results.push('✅ 空腹血糖正常(血糖正常值70mg/dL~99mg/dL)');
                 }
                 
                 // 檢查三酸甘油脂
@@ -440,7 +440,7 @@
                     riskFactors++;
                     results.push('❌ 三酸甘油脂偏高 (正常值≦150mg/dL)');
                 } else if (triglycerides > 0) {
-                    results.push('✅ 三酸甘油脂正常');
+                    results.push('✅ 三酸甘油脂正常(正常值≦150mg/dL)');
                 }
                 
                 // 檢查HDL膽固醇
@@ -451,7 +451,7 @@
                     riskFactors++;
                     results.push('❌ HDL膽固醇偏低 (女性正常值>50mg/dL)');
                 } else if (hdlGender && hdlMeasurement > 0) {
-                    results.push('✅ HDL膽固醇正常');
+                    results.push('✅ HDL膽固醇正常(男性正常值>40mg/dL、女性正常值>50mg/dL)');
                 }
                 
                 // 如果沒有輸入任何數據，顯示提示
@@ -506,3 +506,4 @@
 
 </body>
 </html>
+
