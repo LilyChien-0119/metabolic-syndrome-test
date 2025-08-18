@@ -409,7 +409,7 @@
                 let results = [];
                 
                 // 檢查血壓
-                if (systolic >= 130 || diastolic >= 90) {
+                if (systolic >= 140 || diastolic >= 90) {
                     riskFactors++;
                     results.push('❌ 血壓偏高 (收縮壓正常值≦140 或 舒張壓正常值≦90)');
                 } else if (systolic > 0 || diastolic > 0) {
@@ -506,4 +506,5 @@
 
 </body>
 </html>
+
 
