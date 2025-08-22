@@ -284,23 +284,24 @@
     }
 }
 .stats-box {
-    background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
-    border-left: 5px solid #9c27b0;
-    padding: 20px;
-    margin-bottom: 30px;
-    border-radius: 10px;
+    background: rgba(156, 39, 176, 0.1);
+    border: 1px solid #9c27b0;
+    padding: 8px 12px;
+    margin-top: 15px;
+    border-radius: 20px;
     text-align: center;
+    display: inline-block;
+    font-size: 0.9em;
 }
 .stat-number {
-    font-size: 3em;
+    display: inline;
     font-weight: bold;
     color: #7b1fa2;
-    margin-bottom: 10px;
+    margin-right: 5px;
 }
 .stat-label {
+    display: inline;
     color: #4a148c;
-    font-weight: 500;
-    font-size: 1.2em;
 }
 </style>
 
@@ -310,11 +311,7 @@
         <div class="header">
             🧬 代謝症候群解釋與檢測
         </div>
-<!-- 測驗統計 -->
-<div class="stats-box">
-    <div class="stat-number" id="test-count">0</div>
-    <div class="stat-label">📊 測驗完成人次</div>
-</div>
+
     <div class="main-content">
         <div class="info-panel">
             <h3>📋 重要定義說明</h3>
@@ -540,9 +537,14 @@
            document.getElementById('test-count').textContent = testCount;
         });
     </script>
-
+<!-- 測驗統計 -->
+<div class="stats-box">
+    <div class="stat-number" id="test-count">0</div>
+    <div class="stat-label">📊 測驗完成人次</div>
+</div>
 </body>
 </html>
+
 
 
 
