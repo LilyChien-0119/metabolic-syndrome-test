@@ -283,6 +283,25 @@
         font-size: 18px;
     }
 }
+.stats-box {
+    background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+    border-left: 5px solid #9c27b0;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+.stat-number {
+    font-size: 3em;
+    font-weight: bold;
+    color: #7b1fa2;
+    margin-bottom: 10px;
+}
+.stat-label {
+    color: #4a148c;
+    font-weight: 500;
+    font-size: 1.2em;
+}
 </style>
 
 </head>
@@ -291,7 +310,11 @@
         <div class="header">
             🧬 代謝症候群解釋與檢測
         </div>
-
+<!-- 測驗統計 -->
+<div class="stats-box">
+    <div class="stat-number" id="test-count">0</div>
+    <div class="stat-label">📊 測驗完成人次</div>
+</div>
     <div class="main-content">
         <div class="info-panel">
             <h3>📋 重要定義說明</h3>
@@ -458,7 +481,8 @@
                 if (results.length === 0) {
                     results.push('⚠️ 請輸入檢測數據');
                 }
-                
+                // 增加測驗計數
+                incrementTestCount();
                 // 顯示結果
                 const resultPanel = document.getElementById('result-panel');
                 const resultContent = document.getElementById('result-content');
@@ -502,9 +526,23 @@
                 btn.addEventListener('click', calculateResult);
             }
         });
+        // 測驗計數功能
+        function incrementTestCount() {
+            let testCount = parseInt(localStorage.getItem('metabolic_test_count') || '0');
+            testCount++;
+            localStorage.setItem('metabolic_test_count', testCount.toString());
+            document.getElementById('test-count').textContent = testCount;
+        }
+
+        // 頁面載入時顯示計數
+        window.addEventListener('load', function() {
+           const testCount = parseInt(localStorage.getItem('metabolic_test_count') || '0');
+           document.getElementById('test-count').textContent = testCount;
+        });
     </script>
 
 </body>
 </html>
+
 
 
